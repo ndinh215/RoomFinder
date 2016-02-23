@@ -22,8 +22,8 @@ The features of the project
 
 The project provides 2 APIs:
 
-1. `/api/offers/{date}`: gets and saves room names at a specific date.
-2. `/api/offers/{id}`: removes an offer with a specific Id.
+1. `/api/offers/{date}`: gets and saves room names at a specific date (only supports POST method).
+2. `/api/offers/{id}`: removes an offer with a specific Id (only supports DELETE method).
 
 
 

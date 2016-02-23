@@ -1,4 +1,4 @@
-hw_demo
+Room finder
 =======
 
-A Symfony project created on February 20, 2016, 5:39 pm.
+This project supports adding & remove any offer and rooms related from the hotel Riverside, HCM, Vietnam in the site hotels.com.

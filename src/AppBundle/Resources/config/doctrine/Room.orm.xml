@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity repository-class="AppBundle\Repository\RoomRepository" name="AppBundle\Entity\Room">
+      <indexes>
+          <index name="fk_offer_rooms_idx" columns="offer_id"/>
+      </indexes>
+      <id name="id" type="integer" column="id">
+      <generator strategy="AUTO"/>
+    </id>
+    <field name="name" type="string" column="name" length="255"/>
+    <many-to-one field="offer" target-entity="AppBundle\Entity\Offer" fetch="LAZY" >
+      <join-columns>
+          <join-column name="offer_id" referenced-column-name="id" nullable="1" on-delete="CASCADE"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

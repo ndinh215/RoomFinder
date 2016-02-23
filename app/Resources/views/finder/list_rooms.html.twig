@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    List of Rooms
+{% endblock %}
+
+{% block body %}
+    <div id="wrapper">
+        {% if status == 'OK' %}
+            <div id="container">
+                <h3>The offer at the {{ date }}</h3>
+                <table class="room-list">
+                    <tr>
+                        <td>Id</td>
+                        <td>Name</td>
+                    </tr>
+                    {% for room in rooms %}
+                        <tr>
+                            <td>{{ room.id }}</td>
+                            <td>{{ room.name }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        {% else %}
+            {{ error }}
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/app.js') }}"></script>
+{% endblock %}

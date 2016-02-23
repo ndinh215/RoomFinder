@@ -1,0 +1,13 @@
+parameters:
+
+services:
+    app.finder:
+        class: AppBundle\Service\FinderService
+        calls:
+            - [setEntityManager, ['@doctrine.orm.entity_manager']]
+
+    app.offer:
+        class: AppBundle\Controller\OfferController
+        arguments: ['@service_container']
+        calls:
+            - [setFinder, ['@app.finder']]

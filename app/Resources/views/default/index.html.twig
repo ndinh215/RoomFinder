@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/app.js') }}"></script>
+{% endblock %}
